@@ -1,11 +1,16 @@
 <?php
 
+use App\Http\Controllers\IndexPostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowPostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('posts', IndexPostController::class)->name('posts');
+Route::get('posts/{post}', ShowPostController::class)->name('show-post');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

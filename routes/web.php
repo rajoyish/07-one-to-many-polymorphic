@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexCommentsController;
 use App\Http\Controllers\IndexPostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowPostController;
@@ -11,6 +12,7 @@ Route::get('/', function () {
 
 Route::get('posts', IndexPostController::class)->name('posts');
 Route::get('posts/{post}', ShowPostController::class)->name('show-post');
+Route::get('comments', IndexCommentsController::class)->name('comments');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
